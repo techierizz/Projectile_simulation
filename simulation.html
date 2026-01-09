@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Zoom Projectile Sim</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to the LAB</h1>
+            <p>Enjoy the world of trajectories...</p>
+        </header>
+
+        <canvas id="simCanvas"></canvas>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>Angle (°)</label>
+                <input type="number" id="angle" value="45" min="0" max="90">
+            </div>
+            <div class="control-group">
+                <label>Speed (m/s)</label>
+                <input type="number" id="speed" value="60" min="1">
+            </div>
+            <div class="control-group">
+                <label>Gravity</label>
+                <input type="number" id="gravity" value="9.8" step="0.1">
+            </div>
+            <div class="control-group">
+                <label>Air Res</label>
+                <input type="number" id="drag" value="0" step="0.001">
+            </div>
+            <button id="fireBtn">FIRE!</button>
+            <button id="clearBtn">Clear</button>
+
+            <div class="control-group checkbox-group">
+                <label for="multiMode">Keep Trails</label>
+                <input type="checkbox" id="multiMode">
+            </div>
+        </div>
+        
+        <div class="stats">
+            <p>Height: <span id="maxHeight">0</span> m</p>
+            <p>Distance: <span id="maxDist">0</span> m</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

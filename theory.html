@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Lab | Theory</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 768px) {
+            .theory-section, .theory-section:nth-child(even) {
+                flex-direction: column; 
+                text-align: center;
+            }
+            
+            .topic-card {
+                width: 100%;
+                box-sizing: border-box; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Rocket LAB</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="theory.html" style="color:var(--primary)">Theory</a>
+            <a href="simulation.html">Simulator</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+        
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 3rem; margin-bottom: 10px;">The Physics Behind It</h1>
+            <p style="color: #a0a0a0;">Understanding how objects move through the air.</p>
+        </div>
+
+        <div class="theory-section">
+            <div class="topic-card">
+                <div class="card-icon">📐</div>
+                <h2>The Concept</h2>
+            </div>
+            <div class="topic-content">
+                <p><strong>Projectile motion</strong> is the curved path an object follows when thrown near the Earth's surface. Think of a football kick or a water fountain.</p>
+                <p>Once launched, the only force acting on the object is <strong>Gravity</strong> (and air resistance, if we are being precise). This creates a predictable curved path known as a <strong>Parabola</strong>.</p>
+                
+            </div>
+        </div>
+
+        <div class="theory-section">
+            <div class="topic-card">
+                <div class="card-icon">📜</div>
+                <h2>History</h2>
+            </div>
+            <div class="topic-content">
+                <p>Before the 17th century, the <strong>"Impetus Theory"</strong> suggested that objects moved in straight lines until they ran out of energy, then fell straight down.</p>
+                <p>It was <strong>Galileo Galilei</strong> who changed everything. He realized that horizontal motion and vertical motion are <em>independent</em>. He proved that the path is actually a curve, not a triangle!</p>
+                
+            </div>
+        </div>
+
+        <div class="theory-section">
+            <div class="topic-card">
+                <div class="card-icon">∑</div>
+                <h2>Equations</h2>
+            </div>
+            <div class="topic-content">
+                <p>To predict where the ball lands, we split the velocity into X (horizontal) and Y (vertical) components.</p>
+                
+                <p><strong>Horizontal Distance (x):</strong><br>
+                Moves at constant speed.</p>
+                <div class="equation-box">x = v₀ · cos(θ) · t</div>
+
+                <p style="margin-top: 20px;"><strong>Vertical Height (y):</strong><br>
+                Fights against gravity.</p>
+                <div class="equation-box">y = v₀ · sin(θ) · t - ½ · g · t²</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px;">
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Now that you know the math...</p>
+            <a href="simulation.html" class="btn-main">Launch Simulation</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

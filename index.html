@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projectile Lab | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            background: radial-gradient(circle at center, #ffffff 0%, #eef2f5 100%);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #2d3436;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #636e72;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .floating-icon {
+            font-size: 5rem;
+            animation: float 3s ease-in-out infinite;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Rocket LAB</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="theory.html">Theory</a>
+            <a href="simulation.html">Simulator</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="floating-icon">🚀</div>
+        <h1>Master the Arc.</h1>
+        <p>Explore the physics of projectile motion through an interactive, real-time simulation. Learn the math, control the variables, and predict the path.</p>
+        <a href="theory.html" class="btn-main">Start Learning</a>
+    </div>
+
+</body>
+</html>
