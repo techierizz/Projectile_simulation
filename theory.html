@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projectile Lab | Theory</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        @media (max-width: 768px) {
-            .theory-section, .theory-section:nth-child(even) {
-                flex-direction: column; 
-                text-align: center;
-            }
-            
-            .topic-card {
-                width: 100%;
-                box-sizing: border-box; 
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -32,20 +19,27 @@
 
     <div class="page-wrapper">
         
-        <div style="text-align: center; margin-bottom: 60px;">
-            <h1 style="font-size: 3rem; margin-bottom: 10px;">The Physics Behind It</h1>
-            <p style="color: #a0a0a0;">Understanding how objects move through the air.</p>
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h1 style="font-size: 3rem; margin-bottom: 10px; color: var(--text-main);">The Physics Behind It</h1>
+            <p style="color: var(--text-muted); font-size: 1.2rem;">From Galileo's experiments to modern kinematics.</p>
         </div>
 
         <div class="theory-section">
             <div class="topic-card">
-                <div class="card-icon">📐</div>
+                <div class="card-icon">🧠</div>
                 <h2>The Concept</h2>
             </div>
             <div class="topic-content">
-                <p><strong>Projectile motion</strong> is the curved path an object follows when thrown near the Earth's surface. Think of a football kick or a water fountain.</p>
-                <p>Once launched, the only force acting on the object is <strong>Gravity</strong> (and air resistance, if we are being precise). This creates a predictable curved path known as a <strong>Parabola</strong>.</p>
+                <h3 style="margin-top:0;">What is it?</h3>
+                <p>Projectile motion is the motion of an object thrown or projected into the air, subject to only the acceleration of gravity. The object is called a <strong>projectile</strong>, and its path is called its <strong>trajectory</strong>.</p>
                 
+                
+                <h3 style="margin-top:20px;">The Two Dimensions</h3>
+                <p>The secret to understanding this motion is to split it into two independent parts:</p>
+                <ul>
+                    <li><strong>Horizontal (X):</strong> Moves at a <em>constant velocity</em> because there is no acceleration (ignoring air resistance).</li>
+                    <li><strong>Vertical (Y):</strong> Moves with <em>constant acceleration</em> (gravity, $g \approx 9.8 m/s^2$) downwards.</li>
+                </ul>
             </div>
         </div>
 
@@ -55,36 +49,78 @@
                 <h2>History</h2>
             </div>
             <div class="topic-content">
-                <p>Before the 17th century, the <strong>"Impetus Theory"</strong> suggested that objects moved in straight lines until they ran out of energy, then fell straight down.</p>
-                <p>It was <strong>Galileo Galilei</strong> who changed everything. He realized that horizontal motion and vertical motion are <em>independent</em>. He proved that the path is actually a curve, not a triangle!</p>
+                <h3 style="margin-top:0;">Aristotle vs. Galileo</h3>
+                <p>For centuries, people believed in <strong>Aristotelian physics</strong>, which claimed a projectile moved in a straight line until it "ran out of impetus," then fell straight down.</p>
                 
+                <p>In the 17th century, <strong>Galileo Galilei</strong> revolutionized physics. By rolling balls down inclined planes, he discovered that horizontal and vertical motions are independent. He mathematically proved that the resulting path is a <strong>Parabola</strong>.</p>
+            </div>
+        </div>
+
+        <div class="theory-section">
+            <div class="topic-card">
+                <div class="card-icon">↗️</div>
+                <h2>Types of Motion</h2>
+            </div>
+            <div class="topic-content">
+                <h3 style="margin-top:0;">1. Oblique Projectile Motion</h3>
+                <p>The most common type (and what our simulator uses). The object is launched at an angle $\theta$ relative to the horizontal ground. It rises to a peak and then falls back down.</p>
+                
+
+                <h3 style="margin-top:20px;">2. Horizontal Projectile Motion</h3>
+                <p>When an object is thrown with $\theta = 0^\circ$ (e.g., a ball rolling off a table or a package dropped from a plane). It has initial horizontal speed but zero initial vertical speed.</p>
+                
+
+[Image of horizontal projectile motion diagram]
+
+
+                <h3 style="margin-top:20px;">3. Motion on an Inclined Plane</h3>
+                <p>A more complex version where the landing surface itself is angled (like throwing a ball up a hill). The gravity component must be resolved differently.</p>
             </div>
         </div>
 
         <div class="theory-section">
             <div class="topic-card">
                 <div class="card-icon">∑</div>
-                <h2>Equations</h2>
+                <h2>Formula Sheet</h2>
             </div>
             <div class="topic-content">
-                <p>To predict where the ball lands, we split the velocity into X (horizontal) and Y (vertical) components.</p>
-                
-                <p><strong>Horizontal Distance (x):</strong><br>
-                Moves at constant speed.</p>
-                <div class="equation-box">x = v₀ · cos(θ) · t</div>
+                <p>Here are the "Big Three" formulas derived from kinematic equations.</p>
 
-                <p style="margin-top: 20px;"><strong>Vertical Height (y):</strong><br>
-                Fights against gravity.</p>
-                <div class="equation-box">y = v₀ · sin(θ) · t - ½ · g · t²</div>
+                <strong>1. Time of Flight ($T$)</strong>
+                <p style="font-size:0.9rem; color:var(--text-muted);">How long the projectile stays in the air.</p>
+                <div class="equation-box">$$T = \frac{2 \cdot v_0 \cdot \sin(\theta)}{g}$$</div>
+
+                <strong>2. Maximum Height ($H$)</strong>
+                <p style="font-size:0.9rem; color:var(--text-muted);">The peak vertical position reached.</p>
+                <div class="equation-box">$$H = \frac{v_0^2 \cdot \sin^2(\theta)}{2g}$$</div>
+
+                <strong>3. Horizontal Range ($R$)</strong>
+                <p style="font-size:0.9rem; color:var(--text-muted);">How far away it lands.</p>
+                <div class="equation-box">$$R = \frac{v_0^2 \cdot \sin(2\theta)}{g}$$</div>
+
+                <strong>4. Equation of Trajectory</strong>
+                <p style="font-size:0.9rem; color:var(--text-muted);">The precise path $y$ as a function of $x$.</p>
+                <div class="equation-box">$$y = x \cdot \tan(\theta) - \frac{g \cdot x^2}{2 \cdot v_0^2 \cdot \cos^2(\theta)}$$</div>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 80px;">
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">Now that you know the math...</p>
-            <a href="simulation.html" class="btn-main">Launch Simulation</a>
+        <div style="text-align: center; margin-top: 100px; padding-bottom: 50px;">
+            <h2 style="margin-bottom: 20px;">Seen enough math?</h2>
+            <p style="color:var(--text-muted); margin-bottom: 30px;">Go verify these formulas in the real-time laboratory.</p>
+            <a href="simulation.html" class="btn-main" style="padding: 15px 40px; font-size: 1.2rem;">Launch Simulation 🚀</a>
         </div>
 
     </div>
+
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </body>
 </html>
