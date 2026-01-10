@@ -16,12 +16,51 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Welcome to the LAB</h1>
-            <p>Enjoy the world of trajectories...</p>
-        </header>
+
+        <div class="sim-layout">
+
+        <div class="live-data-panel">
+            <h3>Live Telemetry</h3>
+            <div class="data-row">
+                <span>Time (t):</span>
+                <span id="liveTime">0.00 s</span>
+            </div>
+            <div class="data-row">
+                <span>Pos X:</span>
+                <span id="liveX">0.00 m</span>
+            </div>
+            <div class="data-row">
+                <span>Pos Y:</span>
+                <span id="liveY">0.00 m</span>
+            </div>
+            <div class="data-row">
+                <span>Vel X:</span>
+                <span id="liveVx">0.00 m/s</span>
+            </div>
+            <div class="data-row">
+                <span>Vel Y:</span>
+                <span id="liveVy">0.00 m/s</span>
+            </div>
+
+            <div class="live-formula">
+                <h3 style="font-size: 0.9rem; margin-bottom: 10px;">Live Math</h3>
+        
+                <div class="formula-row">
+                    <div><strong>Dist (x) = vx · t</strong></div>
+                    <div>x = <span class="calc-val" id="f_vx">0</span> · <span class="calc-val" id="f_t1">0</span></div>
+                </div>
+
+                <div class="formula-row">
+                    <div><strong>Vel Y = vy₀ - g·t</strong></div>
+                    <div>vy = <span class="calc-val" id="f_vy0">0</span> - (<span id="f_g">9.8</span> · <span class="calc-val" id="f_t2">0</span>)</div>
+                </div>
+            </div>
+
+        </div>
 
         <canvas id="simCanvas"></canvas>
+
+        </div>
 
         <div class="controls">
             <div class="control-group">
@@ -53,6 +92,7 @@
             <p>Height: <span id="maxHeight">0</span> m</p>
             <p>Distance: <span id="maxDist">0</span> m</p>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
