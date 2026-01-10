@@ -1,8 +1,8 @@
 const canvas = document.getElementById('simCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = 900;
-canvas.height = 400;
+canvas.width = 1000; 
+canvas.height = 450;
 
 
 const angleInput = document.getElementById('angle');
@@ -15,13 +15,29 @@ const statsHeight = document.getElementById('maxHeight');
 const statsDist = document.getElementById('maxDist');
 const multiModeInput = document.getElementById('multiMode');
 
+const liveTime = document.getElementById('liveTime');
+const liveX = document.getElementById('liveX');
+const liveY = document.getElementById('liveY');
+const liveVx = document.getElementById('liveVx');
+const liveVy = document.getElementById('liveVy');
+
+const f_vx = document.getElementById('f_vx');
+const f_t1 = document.getElementById('f_t1');
+const f_vy0 = document.getElementById('f_vy0');
+const f_g = document.getElementById('f_g');
+const f_t2 = document.getElementById('f_t2');
+
 let animationId;
 let isAnimating = false;
 let projectile = { x: 0, y: 0, vx: 0, vy: 0 };
 let currentPath = []; 
 let previousPaths = []; 
 let overallMaxX = 10;   
-let overallMaxY = 10;   
+let overallMaxY = 10; 
+
+let timeElapsed = 0;
+
+let initialVy = 0;
 
 const padding = 10; 
 
@@ -49,7 +65,14 @@ function fire() {
     projectile.y = 0;
     projectile.vx = speed * Math.cos(angleRad);
     projectile.vy = speed * Math.sin(angleRad);
-    
+
+    initialVy = projectile.vy;
+
+    f_vy0.textContent = initialVy.toFixed(2);
+    f_g.textContent = (parseFloat(gravityInput.value) || 9.8).toFixed(1);
+
+    timeElapsed = 0;
+
     currentPath = [{x: 0, y: 0}]; 
     
     statsHeight.textContent = "...";
@@ -73,6 +96,19 @@ function animate() {
 
     projectile.x += projectile.vx * timeStep;
     projectile.y += projectile.vy * timeStep; 
+
+    timeElapsed += timeStep;
+
+    liveTime.textContent = timeElapsed.toFixed(2) + " s";
+    liveX.textContent = projectile.x.toFixed(2) + " m";
+    liveY.textContent = Math.max(0, projectile.y).toFixed(2) + " m";
+    liveVx.textContent = projectile.vx.toFixed(2) + " m/s";
+    liveVy.textContent = projectile.vy.toFixed(2) + " m/s";
+
+    f_vx.textContent = projectile.vx.toFixed(2);
+    f_t1.textContent = timeElapsed.toFixed(2);
+
+    f_t2.textContent = timeElapsed.toFixed(2);
 
     currentPath.push({ x: projectile.x, y: projectile.y });
 
