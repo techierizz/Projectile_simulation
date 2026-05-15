@@ -6,15 +6,6 @@
 
 Real-Time Physics • Dynamic Telemetry • Adaptive Simulation Rendering
 
-<br>
-
-[![JavaScript](https://img.shields.io/badge/JavaScript-Physics%20Engine-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
-[![HTML5](https://img.shields.io/badge/HTML5-Canvas%20Rendering-E34F26?style=for-the-badge&logo=html5&logoColor=white)]()
-[![MathJax](https://img.shields.io/badge/MathJax-LaTeX%20Rendering-003B57?style=for-the-badge)]()
-[![Physics](https://img.shields.io/badge/Physics-Projectile%20Simulation-blue?style=for-the-badge)]()
-
-<br>
-
 </div>
 
 ---
